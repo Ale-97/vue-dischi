@@ -44,7 +44,7 @@ export default {
           return true;
         }
         if (filterString === genere.genre) {
-          //se la nostra selezione coincide con il tipo dell'oggeto in esame ci restituirà quell'oggetto
+          //se la nostra selezione coincide con l'oggeto in esame ci restituirà quell'oggetto
           return true;
         }
         return false; //se nessuna condizione viene esaudita non restituirà nulla
