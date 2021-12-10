@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       albums: [],
-      filtredAlbums:[],
+      filtredAlbums: [],
       inmputSearch: "",
     };
   },
@@ -33,26 +33,30 @@ export default {
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((result) => {
         this.albums = result.data.response;
-        this.searchGenre('all')
+        this.searchGenre("all");
       });
   },
-
   methods: {
     searchGenre(filterString) {
-    return this.filtredAlbums = this.albums.filter((genere) => {
-        if (filterString === 'all') {//se si selezziona 'all' restituirà tutti i valori
-            return true;
+      return (this.filtredAlbums = this.albums.filter((genere) => {
+        if (filterString === "all") {
+          //se si selezziona 'all' restituirà tutti i valori
+          return true;
         }
-        if (filterString === genere.genre) {//se la nostra selezione coincide con il tipo dell'oggeto in esame ci restituirà quell'oggetto
-            return true;
+        if (filterString === genere.genre) {
+          //se la nostra selezione coincide con il tipo dell'oggeto in esame ci restituirà quell'oggetto
+          return true;
         }
-        return false;//se nessuna condizione viene esaudita non restituirà nulla
-    })
-}
-
+        return false; //se nessuna condizione viene esaudita non restituirà nulla
+      }));
+    },
   },
 };
 </script>
 
 <style lang="scss">
+#app {
+  background: rgb(30, 45, 59);
+  min-height: 100vh;
+}
 </style>
