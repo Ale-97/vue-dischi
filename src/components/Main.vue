@@ -14,15 +14,15 @@
 <script>
 import Album from "./Album.vue";
 
-export default ({
+export default {
  name:"Main",
  props:{
-     albums:Object,
+     albums:Array,
  },
   components:{
      Album,
   }
-})
+}
 </script>
 
 <style lang="scss" scoped>

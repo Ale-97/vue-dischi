@@ -11,13 +11,13 @@
 
 <script>
 
-export default ({
+export default {
  name:"Album",
  props:{
      album:Object,
  }
 
-})
+}
 </script>
 
 <style lang="scss" scoped>
