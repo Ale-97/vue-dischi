@@ -23,7 +23,6 @@ export default {
   data() {
     return {
       albums: [],
-      filtredAlbums: [],
       inmputSearch: "",
     };
   },
@@ -36,20 +35,27 @@ export default {
         this.searchGenre("all");
       });
   },
-  methods: {
-    searchGenre(filterString) {
-      return (this.filtredAlbums = this.albums.filter((genere) => {
-        if (filterString === "all") {
+  computed:{
+    filtredAlbums(){
+      return this.albums.filter((genere) => {
+        let filtro = this.inmputSearch
+        if (filtro === "all") {
           //se si selezziona 'all' restituirà tutti i valori
           return true;
         }
-        if (filterString === genere.genre) {
+        if (filtro === genere.genre) {
           //se la nostra selezione coincide con l'oggeto in esame ci restituirà quell'oggetto
           return true;
         }
         return false; //se nessuna condizione viene esaudita non restituirà nulla
-      }));
+      });
     },
+      
+    },
+  methods: {
+    searchGenre(filterString) {
+      return this.inmputSearch = filterString
+      }
   },
 };
 </script>
